@@ -1,44 +1,50 @@
 #include <stdio.h>
-void dispMat(int mat[size][size]) {
-    for (int i = 0; i < size; i++) {
-        for (int j = 0; j < size; j++) {
-            printf("%d ", mat[i][j]);
+
+#define SIZE 5
+
+void dispMat(char mat[SIZE][SIZE]) {
+    for (int i = 0; i < SIZE; i++) {
+        for (int j = 0; j < SIZE; j++) {
+            printf("%c ", mat[i][j]);
         }
+        printf("\n");
     }
 }
 
-void dispRows(int mat[size][siz]){
-    for (int i = 0; i < size; i += 2) {  
-        for (int j = 0; j < size; j++) {
-            printf("%d ", mat[i][j]);
+void dispRows(char mat[SIZE][SIZE]) {
+    for (int i = 0; i < SIZE; i += 2) {  
+        for (int j = 0; j < SIZE; j++) {
+            printf("%c ", mat[i][j]);
         }
+        printf("\n");
     }
 }
 
-void dispcols(int mat[size][size]) {
-    for (int i = 0; i < size; i++) {
-        for (int j = 1; j < size; j += 2) { 
-            printf("%d ", mat[i][j]);
+void dispCols(char mat[SIZE][SIZE]) {
+    for (int i = 0; i < SIZE; i++) {
+        for (int j = 1; j < SIZE; j += 2) { 
+            printf("%c ", mat[i][j]);
         }
+        printf("\n");
     }
 }
 
-void dispDiag(int mat[size][size]) {
+void dispDiag(char mat[SIZE][SIZE]) {
     printf("Main diagonal: ");
-    for (int i = 0; i < size; i++) {
-        printf("%d ", mat[i][i]);
+    for (int i = 0; i < SIZE; i++) {
+        printf("%c ", mat[i][i]);
     }
-
-    printf("Secondary diagonal: ");
-    for (int i = 0; i < size; i++) {
-        printf("%d ", mat[i][size - i - 1]);
+    printf("\nSecondary diagonal: ");
+    for (int i = 0; i < SIZE; i++) {
+        printf("%c ", mat[i][SIZE - i - 1]);
     }
+    printf("\n");
 }
 
-void swapTriang(int mat[size][size]) {
-    for (int i = 1; i < size; i++) {
+void swapTriang(char mat[SIZE][SIZE]) {
+    for (int i = 1; i < SIZE; i++) {
         for (int j = 0; j < i; j++) {
-            int t = mat[i][j];
+            char t = mat[i][j];
             mat[i][j] = mat[j][i];
             mat[j][i] = t;
         }
@@ -46,21 +52,24 @@ void swapTriang(int mat[size][size]) {
 }
 
 int main() {
-    int size = 5;
-    int mat[size][size] = {
-        {1, 2, 3, 4, 5},
-        {7, 'a', 'c', 8, 'd'},
-        {c, 9, 4, 'z', 8},
-        {5, 6, 'p', 'n', 3},
-        {2, 9, 't', 'm', 'k'}
+    char mat[SIZE][SIZE] = {
+        {'1', '2', '3', '4', '5'},
+        {'7', 'a', 'c', '8', 'd'},
+        {'x', '9', '4', 'z', '8'},
+        {'5', '6', 'p', 'n', '3'},
+        {'2', '9', 't', 'm', 'k'}
     };
 
-   
     dispMat(mat);
+    printf("\n");
     dispRows(mat);
-    dispcols(mat);
+    printf("\n");
+    dispCols(mat);
+    printf("\n");
     dispDiag(mat);
+    printf("\n");
     swapTriang(mat);
     dispMat(mat);
+    
     return 0;
 }
