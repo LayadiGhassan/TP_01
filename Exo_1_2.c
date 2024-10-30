@@ -1,5 +1,4 @@
 #include <stdio.h>
-
 void dispMat(int mat[size][size]) {
     for (int i = 0; i < size; i++) {
         for (int j = 0; j < size; j++) {
@@ -47,12 +46,13 @@ void swapTriang(int mat[size][size]) {
 }
 
 int main() {
+    int size = 5;
     int mat[size][size] = {
         {1, 2, 3, 4, 5},
-        {7, a, c, 8, d},
-        {c, 9, 4, z, 8},
-        {5, 6, p, n, 3},
-        {2, 9, t, m, k}
+        {7, 'a', 'c', 8, 'd'},
+        {c, 9, 4, 'z', 8},
+        {5, 6, 'p', 'n', 3},
+        {2, 9, 't', 'm', 'k'}
     };
 
    
@@ -62,6 +62,5 @@ int main() {
     dispDiag(mat);
     swapTriang(mat);
     dispMat(mat);
-
     return 0;
 }
