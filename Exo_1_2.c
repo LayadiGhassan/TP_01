@@ -53,25 +53,20 @@ void swapTriang(int mat[size][size]) {
 
 int main() {
     int mat[size][size] = {
-        {1, 2, 3, 4},
-        {5, 6, 7, 8},
-        {9, 10, 11, 12},
-        {13, 14, 15, 16}
+        {1, 2, 3, 4, 5},
+        {7, a, c, 8, d},
+        {c, 9, 4, z, 8},
+        {5, 6, p, n, 3},
+        {2, 9, t, m, k}
     };
 
    
     dispMat(mat);
     dispRows(mat);
-
-    printf("\nMatrix with odd-indexed elements in each row:\n");
-    displayOddIndexedElements(matrix);
-
-    printf("\nDiagonals of the Matrix:\n");
-    displayDiagonals(matrix);
-
-    printf("\nMatrix after swapping triangles:\n");
-    swapTriangles(matrix);
-    displayMatrix(matrix);
+    dispcols(mat);
+    dispDiag(mat);
+    swapTriang(mat);
+    dispMat(mat);
 
     return 0;
 }
